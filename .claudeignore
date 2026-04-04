@@ -59,5 +59,17 @@ pnpm-lock.yaml
 *.tsbuildinfo
 next-env.d.ts
 
+# Config files Claude doesn't need to scan
+tsconfig.json
+eslint.config.mjs
+postcss.config.mjs
+tailwind.config.*
+
 # Uploads
 uploads/
+
+# Misc generated
+*.map
+*.d.ts
+.turbo/
+.cache/
