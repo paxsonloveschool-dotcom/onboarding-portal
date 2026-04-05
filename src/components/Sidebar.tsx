@@ -3,6 +3,9 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { BrandConfig } from '@/types';
+import { BUSINESS } from '@/lib/business-info';
+
+const b = BUSINESS;
 
 const navItems = [
   { label: 'Dashboard', path: '/dashboard', icon: '📊' },
@@ -17,8 +20,8 @@ export default function Sidebar({ brand }: { brand: BrandConfig }) {
   const basePath = `/${brand.slug}`;
 
   return (
-    <aside className="w-64 min-h-[calc(100vh-4rem)] bg-gray-50 border-r border-gray-200">
-      <div className="p-4">
+    <aside className="w-64 min-h-[calc(100vh-4rem)] bg-gray-50 border-r border-gray-200 flex flex-col">
+      <div className="p-4 flex-1">
         <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">
           Onboarding
         </h3>
@@ -43,6 +46,20 @@ export default function Sidebar({ brand }: { brand: BrandConfig }) {
             );
           })}
         </nav>
+      </div>
+
+      {/* Backlinks footer */}
+      <div className="p-4 border-t border-gray-200 text-xs text-gray-400 space-y-1.5">
+        <a href={b.url} target="_blank" rel="noopener" className="block hover:text-gray-700 transition">
+          hplandscapingllc.com
+        </a>
+        <a href={b.social.instagram} target="_blank" rel="noopener" className="block hover:text-gray-700 transition">
+          @hplandscapingllc
+        </a>
+        <a href={b.social.bbb} target="_blank" rel="noopener" className="block hover:text-gray-700 transition">
+          BBB Accredited
+        </a>
+        <p className="text-gray-300 pt-1">{b.phone}</p>
       </div>
     </aside>
   );

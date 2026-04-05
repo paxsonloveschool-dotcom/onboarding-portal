@@ -3,6 +3,9 @@
 import Link from 'next/link';
 import { useSession } from 'next-auth/react';
 import Navbar from '@/components/Navbar';
+import { BUSINESS } from '@/lib/business-info';
+
+const b = BUSINESS;
 
 export default function Home() {
   const { data: session } = useSession();
@@ -19,9 +22,14 @@ export default function Home() {
           </div>
           <div className="max-w-7xl mx-auto px-4 py-20 text-center relative z-10">
             <div className="mb-6">
-              <span className="inline-block bg-white/10 backdrop-blur px-4 py-1.5 rounded-full text-sm font-medium text-green-200 border border-white/20">
-                HP Landscaping
-              </span>
+              <a
+                href={b.url}
+                target="_blank"
+                rel="noopener"
+                className="inline-block bg-white/10 backdrop-blur px-4 py-1.5 rounded-full text-sm font-medium text-green-200 border border-white/20 hover:bg-white/20 transition"
+              >
+                HP Landscaping &mdash; College Station, TX
+              </a>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-4">
               Employee Onboarding Portal
@@ -131,8 +139,105 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="bg-green-950 text-green-300/60 text-center py-6 text-sm border-t border-green-800/50">
-        &copy; {new Date().getFullYear()} HP Landscaping LLC. All rights reserved.
+      <footer className="bg-green-950 text-green-300/70 border-t border-green-800/50">
+        <div className="max-w-6xl mx-auto px-4 py-12">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            {/* Company Info */}
+            <div>
+              <h3 className="text-white font-semibold text-lg mb-3">HP Landscaping</h3>
+              <p className="text-sm leading-relaxed mb-3">
+                {b.legalName} &mdash; {b.tagline}. Serving{' '}
+                <a href={b.url} target="_blank" rel="noopener" className="text-green-300 hover:text-white underline underline-offset-2 transition">
+                  College Station, TX
+                </a>{' '}
+                and the Brazos Valley since {b.foundingYear}.
+              </p>
+              <p className="text-sm">
+                <a href={`tel:${b.phone.replace(/\D/g, '')}`} className="text-green-300 hover:text-white transition">
+                  {b.phone}
+                </a>
+                {' '}&bull;{' '}
+                <a href={`mailto:${b.email}`} className="text-green-300 hover:text-white transition">
+                  {b.email}
+                </a>
+              </p>
+              <p className="text-sm mt-1">
+                {b.address.street}, {b.address.city}, {b.address.stateCode} {b.address.zip}
+              </p>
+            </div>
+
+            {/* Services */}
+            <div>
+              <h3 className="text-white font-semibold text-lg mb-3">
+                <a href={b.url} target="_blank" rel="noopener" className="hover:text-green-300 transition">
+                  Our Services
+                </a>
+              </h3>
+              <ul className="space-y-1.5 text-sm">
+                {b.services.slice(0, 7).map((s) => (
+                  <li key={s.name}>
+                    <a href={b.url} target="_blank" rel="noopener" className="hover:text-white transition">
+                      {s.name}
+                    </a>
+                  </li>
+                ))}
+                <li>
+                  <a href={b.url} target="_blank" rel="noopener" className="text-green-300 hover:text-white transition font-medium">
+                    View all {b.services.length} services &rarr;
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Links & Social Proof */}
+            <div>
+              <h3 className="text-white font-semibold text-lg mb-3">Connect With Us</h3>
+              <ul className="space-y-1.5 text-sm">
+                <li>
+                  <a href={b.url} target="_blank" rel="noopener" className="hover:text-white transition">
+                    hplandscapingllc.com
+                  </a>
+                </li>
+                <li>
+                  <a href={b.social.facebook} target="_blank" rel="noopener" className="hover:text-white transition">
+                    Facebook
+                  </a>
+                </li>
+                <li>
+                  <a href={b.social.instagram} target="_blank" rel="noopener" className="hover:text-white transition">
+                    Instagram @hplandscapingllc
+                  </a>
+                </li>
+                <li>
+                  <a href={b.social.yelp} target="_blank" rel="noopener" className="hover:text-white transition">
+                    Yelp Reviews
+                  </a>
+                </li>
+                <li>
+                  <a href={b.social.bbb} target="_blank" rel="noopener" className="hover:text-white transition">
+                    BBB Accredited &mdash; A Rating
+                  </a>
+                </li>
+                <li>
+                  <a href={b.social.chamberOfCommerce} target="_blank" rel="noopener" className="hover:text-white transition">
+                    Bryan-College Station Chamber of Commerce
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Bottom bar */}
+          <div className="border-t border-green-800/50 pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-green-400/50">
+            <p>&copy; {new Date().getFullYear()} {b.legalName}. All rights reserved.</p>
+            <p>
+              <a href={b.url} target="_blank" rel="noopener" className="hover:text-white transition">
+                Luxury Landscape Design &amp; Build
+              </a>
+              {' '}&bull; College Station, TX &bull; Est. {b.foundingYear}
+            </p>
+          </div>
+        </div>
       </footer>
     </>
   );

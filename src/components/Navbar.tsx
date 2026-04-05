@@ -20,6 +20,14 @@ export default function Navbar({ brand }: { brand?: BrandConfig }) {
             <Link href={brand ? `/${brand.slug}/dashboard` : '/'} className="text-xl font-bold">
               {brand ? brand.name : 'HP Landscaping'}
             </Link>
+            <a
+              href="https://www.hplandscapingllc.com"
+              target="_blank"
+              rel="noopener"
+              className="text-xs bg-white/10 hover:bg-white/20 px-2 py-0.5 rounded transition hidden sm:inline-block"
+            >
+              Main Site
+            </a>
           </div>
 
           <div className="flex items-center space-x-4">
