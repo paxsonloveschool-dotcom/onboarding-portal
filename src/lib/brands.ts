@@ -19,6 +19,15 @@ export const brands: Record<string, BrandConfig> = {
     bgGradient: 'from-blue-900 via-blue-800 to-indigo-700',
     logo: '🔧',
   },
+  godmode: {
+    name: 'GOD MODE v2',
+    slug: 'godmode',
+    primaryColor: '#7c3aed',
+    secondaryColor: '#a855f7',
+    accentColor: '#c084fc',
+    bgGradient: 'from-purple-950 via-violet-900 to-fuchsia-900',
+    logo: '⚡',
+  },
 };
 
 export function getBrandFromPath(path: string): BrandConfig | null {
