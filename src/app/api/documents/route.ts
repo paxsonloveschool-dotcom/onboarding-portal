@@ -5,6 +5,16 @@ import db from '@/lib/db';
 import path from 'path';
 import { writeFile, mkdir } from 'fs/promises';
 
+const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
+const ALLOWED_MIME_TYPES = [
+  'application/pdf',
+  'image/jpeg',
+  'image/png',
+  'application/msword',
+  'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+];
+const ALLOWED_EXTENSIONS = ['.pdf', '.jpg', '.jpeg', '.png', '.doc', '.docx'];
+
 export async function GET() {
   const session = await getServerSession(authOptions);
   if (!session?.user) {
@@ -33,6 +43,37 @@ export async function POST(req: NextRequest) {
 
   if (!file) {
     return NextResponse.json({ error: 'No file provided' }, { status: 400 });
+  }
+
+  // Validate file size
+  if (file.size > MAX_FILE_SIZE) {
+    return NextResponse.json(
+      { error: 'File too large. Maximum size is 10MB.' },
+      { status: 400 }
+    );
+  }
+
+  // Validate file extension
+  const ext = path.extname(file.name).toLowerCase();
+  if (!ALLOWED_EXTENSIONS.includes(ext)) {
+    return NextResponse.json(
+      { error: `Invalid file type. Allowed: ${ALLOWED_EXTENSIONS.join(', ')}` },
+      { status: 400 }
+    );
+  }
+
+  // Validate MIME type
+  if (file.type && !ALLOWED_MIME_TYPES.includes(file.type)) {
+    return NextResponse.json(
+      { error: 'Invalid file type. Please upload PDF, image, or Word documents.' },
+      { status: 400 }
+    );
+  }
+
+  // Validate doc_type
+  const validDocTypes = ['government_id', 'drivers_license', 'certification', 'insurance', 'other'];
+  if (docType && !validDocTypes.includes(docType)) {
+    return NextResponse.json({ error: 'Invalid document type' }, { status: 400 });
   }
 
   const bytes = await file.arrayBuffer();

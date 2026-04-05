@@ -13,27 +13,15 @@ export default function RestoreDashboard() {
   const [stats, setStats] = useState({ completed: 0, total: 0, hasW9: false, docCount: 0 });
 
   useEffect(() => {
-    fetch('/api/checklist')
+    fetch('/api/dashboard')
       .then((r) => r.json())
       .then((data) => {
-        const items = data.items || [];
-        setStats((s) => ({
-          ...s,
-          completed: items.filter((i: any) => i.completed).length,
-          total: items.length,
-        }));
-      });
-
-    fetch('/api/w9')
-      .then((r) => r.json())
-      .then((data) => {
-        setStats((s) => ({ ...s, hasW9: !!data.submission }));
-      });
-
-    fetch('/api/documents')
-      .then((r) => r.json())
-      .then((data) => {
-        setStats((s) => ({ ...s, docCount: (data.documents || []).length }));
+        setStats({
+          completed: data.checklist?.completed || 0,
+          total: data.checklist?.total || 0,
+          hasW9: data.hasW9 || false,
+          docCount: data.docCount || 0,
+        });
       });
   }, []);
 

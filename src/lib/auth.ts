@@ -58,5 +58,5 @@ export const authOptions: NextAuthOptions = {
   pages: {
     signIn: '/login',
   },
-  secret: process.env.NEXTAUTH_SECRET || 'hp-restore-onboarding-secret-key-change-in-production',
+  secret: process.env.NEXTAUTH_SECRET,
 };

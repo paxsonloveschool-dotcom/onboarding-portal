@@ -21,5 +21,24 @@ export async function GET() {
     )
     .all();
 
-  return NextResponse.json({ employees });
+  // Recent activity: last 20 actions across W9 submissions, document uploads, checklist completions
+  const activities = db
+    .prepare(
+      `SELECT * FROM (
+        SELECT w.id, u.name as employee_name, u.team, 'Submitted W-9 form' as action, w.submitted_at as timestamp
+        FROM w9_submissions w JOIN users u ON w.user_id = u.id
+        UNION ALL
+        SELECT d.id, u.name as employee_name, u.team, 'Uploaded ' || d.doc_type || ' document' as action, d.uploaded_at as timestamp
+        FROM documents d JOIN users u ON d.user_id = u.id
+        UNION ALL
+        SELECT cp.id, u.name as employee_name, u.team, 'Completed: ' || ci.title as action, cp.completed_at as timestamp
+        FROM checklist_progress cp
+        JOIN users u ON cp.user_id = u.id
+        JOIN checklist_items ci ON cp.checklist_item_id = ci.id
+        WHERE cp.completed = 1 AND cp.completed_at IS NOT NULL
+      ) ORDER BY timestamp DESC LIMIT 20`
+    )
+    .all();
+
+  return NextResponse.json({ employees, activities });
 }

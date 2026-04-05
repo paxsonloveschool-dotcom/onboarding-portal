@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrandConfig } from '@/types';
 
 export default function W9Form({ brand }: { brand: BrandConfig }) {
@@ -15,8 +15,23 @@ export default function W9Form({ brand }: { brand: BrandConfig }) {
     date_signed: new Date().toISOString().split('T')[0],
   });
   const [submitted, setSubmitted] = useState(false);
+  const [existingSubmission, setExistingSubmission] = useState<any>(null);
   const [loading, setLoading] = useState(false);
+  const [checkingStatus, setCheckingStatus] = useState(true);
   const [error, setError] = useState('');
+
+  // Check for existing W9 on mount
+  useEffect(() => {
+    fetch('/api/w9')
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.submission) {
+          setExistingSubmission(data.submission);
+          setSubmitted(true);
+        }
+      })
+      .finally(() => setCheckingStatus(false));
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -43,12 +58,24 @@ export default function W9Form({ brand }: { brand: BrandConfig }) {
     }
   };
 
+  if (checkingStatus) {
+    return <div className="text-gray-500 py-8">Loading W-9 status...</div>;
+  }
+
   if (submitted) {
     return (
       <div className="text-center py-12">
         <div className="text-6xl mb-4">✅</div>
         <h2 className="text-2xl font-bold text-gray-900 mb-2">W-9 Submitted Successfully</h2>
-        <p className="text-gray-600">Your W-9 form has been received and is on file.</p>
+        <p className="text-gray-600 mb-4">Your W-9 form has been received and is on file.</p>
+        {existingSubmission && (
+          <div className="max-w-md mx-auto text-left bg-gray-50 rounded-lg p-4 mt-4">
+            <p className="text-sm text-gray-600"><strong>Name:</strong> {existingSubmission.name}</p>
+            <p className="text-sm text-gray-600"><strong>SSN/EIN:</strong> {existingSubmission.ssn_or_ein}</p>
+            <p className="text-sm text-gray-600"><strong>Submitted:</strong> {new Date(existingSubmission.submitted_at).toLocaleDateString()}</p>
+            <p className="text-xs text-gray-400 mt-2">Contact your administrator to make changes.</p>
+          </div>
+        )}
       </div>
     );
   }
