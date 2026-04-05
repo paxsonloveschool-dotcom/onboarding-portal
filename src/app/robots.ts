@@ -6,8 +6,9 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
+        // Allow all crawlers including AI/LLM bots (GPTBot, Google-Extended, Anthropic, etc.)
         userAgent: '*',
-        allow: ['/', '/login', '/register'],
+        allow: ['/', '/login', '/register', '/hp-landscaping/', '/restore/', '/llms.txt'],
         disallow: [
           '/api/',
           '/admin/',
@@ -16,14 +17,6 @@ export default function robots(): MetadataRoute.Robots {
           '/restore/w9',
           '/restore/documents',
         ],
-      },
-      {
-        userAgent: 'GPTBot',
-        disallow: ['/'],
-      },
-      {
-        userAgent: 'CCBot',
-        disallow: ['/'],
       },
     ],
     sitemap: `${BASE_URL}/sitemap.xml`,

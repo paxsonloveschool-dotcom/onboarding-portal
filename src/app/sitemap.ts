@@ -40,5 +40,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  return [...publicRoutes, ...divisionRoutes];
+  // LLM-friendly content page
+  const llmRoutes: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE_URL}/llms.txt`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+  ];
+
+  return [...publicRoutes, ...llmRoutes, ...divisionRoutes];
 }
