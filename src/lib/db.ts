@@ -107,7 +107,7 @@ function getDb(): Database.Database {
   // Seed admin
   const userCount = _db.prepare('SELECT COUNT(*) as cnt FROM users').get() as { cnt: number };
   if (userCount.cnt === 0) {
-    const hash = bcrypt.hashSync('admin123', 10);
+    const hash = bcrypt.hashSync('HPRestore!2026$ecure', 10);
     _db.prepare(
       'INSERT INTO users (email, password_hash, name, role, team) VALUES (?, ?, ?, ?, ?)'
     ).run('admin@hplandscaping.com', hash, 'Admin User', 'admin', 'hp');
