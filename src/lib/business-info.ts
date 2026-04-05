@@ -10,7 +10,7 @@ export const BUSINESS = {
   foundingYear: 2020,
   url: 'https://hplandscaping.com',
   onboardingUrl: 'https://onboarding.hplandscaping.com',
-  phone: '(979) 985-5638',
+  phone: '(979) 701-2229',
   email: 'info@hplandscaping.com',
 
   address: {
