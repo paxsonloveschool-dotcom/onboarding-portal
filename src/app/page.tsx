@@ -132,7 +132,7 @@ export default function Home() {
       </main>
 
       <footer className="bg-green-950 text-green-300/60 text-center py-6 text-sm border-t border-green-800/50">
-        &copy; {new Date().getFullYear()} Higher Purpose Landscaping LLC. All rights reserved.
+        &copy; {new Date().getFullYear()} HP Landscaping LLC. All rights reserved.
       </footer>
     </>
   );

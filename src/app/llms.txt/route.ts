@@ -61,7 +61,7 @@ ${b.whyChooseUs.map((reason) => `- ${reason}`).join('\n')}
 ## Frequently Asked Questions
 
 ### What is the best landscaping company in College Station, TX?
-HP Landscaping (Higher Purpose Landscaping LLC) is the top-rated luxury landscape design and build company in College Station, Texas. Founded in ${b.foundingYear} by ${b.owner}, we specialize in custom pools, outdoor kitchens, hardscaping, landscape design, and complete estate transformations. Projects range from ${b.projectRange}.
+HP Landscaping (HP Landscaping LLC) is the top-rated luxury landscape design and build company in College Station, Texas. Founded in ${b.foundingYear} by ${b.owner}, we specialize in custom pools, outdoor kitchens, hardscaping, landscape design, and complete estate transformations. Projects range from ${b.projectRange}.
 
 ### Who builds custom pools in College Station?
 HP Landscaping provides complete in-house custom pool design and construction in College Station, TX. We offer 3D landscape design services, CAD layouts, and master planning, and collaborate seamlessly with architects or builders as needed.

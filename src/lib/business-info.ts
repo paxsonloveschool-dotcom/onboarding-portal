@@ -1,12 +1,12 @@
 /**
- * Central business information for HP Landscaping (Higher Purpose Landscaping LLC).
+ * Central business information for HP Landscaping (HP Landscaping LLC).
  * Used across structured data, metadata, llms.txt, and on-page content.
  * Update this single file to propagate changes everywhere.
  */
 
 export const BUSINESS = {
   name: 'HP Landscaping',
-  legalName: 'Higher Purpose Landscaping LLC',
+  legalName: 'HP Landscaping LLC',
   dba: 'HP Landscaping',
   foundingYear: 2005,
   bbcAccreditedSince: '2024-09-25',

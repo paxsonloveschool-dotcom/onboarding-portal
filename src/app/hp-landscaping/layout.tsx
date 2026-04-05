@@ -11,11 +11,11 @@ export const metadata: Metadata = {
     template: '%s | HP Landscaping',
   },
   description:
-    'Employee onboarding portal for HP Landscaping (Higher Purpose Landscaping LLC). Submit your W-9 tax form, review landscaping safety SOPs & equipment procedures, upload certifications and IDs, and complete your 8-step onboarding checklist.',
+    'Employee onboarding portal for HP Landscaping (HP Landscaping LLC). Submit your W-9 tax form, review landscaping safety SOPs & equipment procedures, upload certifications and IDs, and complete your 8-step onboarding checklist.',
   keywords: [
     'HP Landscaping',
     'HP Landscaping College Station',
-    'Higher Purpose Landscaping LLC',
+    'HP Landscaping LLC',
     'best landscaping company College Station TX',
     'luxury landscape design College Station',
     'custom pools College Station TX',

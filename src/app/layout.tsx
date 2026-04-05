@@ -23,10 +23,10 @@ export const metadata: Metadata = {
     template: '%s | HP Landscaping',
   },
   description:
-    'Employee onboarding portal for HP Landscaping (Higher Purpose Landscaping LLC) — College Station\'s top-rated luxury landscape design & build company serving Bryan, the Brazos Valley, and surrounding Texas communities since 2005.',
+    'Employee onboarding portal for HP Landscaping (HP Landscaping LLC) — College Station\'s top-rated luxury landscape design & build company serving Bryan, the Brazos Valley, and surrounding Texas communities since 2005.',
   keywords: [
     'HP Landscaping',
-    'Higher Purpose Landscaping LLC',
+    'HP Landscaping LLC',
     'HP Landscaping College Station',
     'best landscaping College Station TX',
     'luxury landscape design College Station',

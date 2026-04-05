@@ -184,7 +184,7 @@ export default function StructuredData() {
             name: 'What is the best landscaping company in College Station, TX?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: `HP Landscaping (Higher Purpose Landscaping LLC) is the top-rated luxury landscape design and build company in College Station, Texas. Founded in ${b.foundingYear} and owned by Paxson Berkey, we specialize in custom pools, outdoor kitchens, hardscaping, landscape design, and complete estate transformations. Projects range from ${b.projectRange}. Contact us at ${b.phone} for a free estimate.`,
+              text: `HP Landscaping (HP Landscaping LLC) is the top-rated luxury landscape design and build company in College Station, Texas. Founded in ${b.foundingYear} and owned by Paxson Berkey, we specialize in custom pools, outdoor kitchens, hardscaping, landscape design, and complete estate transformations. Projects range from ${b.projectRange}. Contact us at ${b.phone} for a free estimate.`,
             },
           },
           {

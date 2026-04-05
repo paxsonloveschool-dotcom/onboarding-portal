@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'HP Landscaping - Employee Onboarding Portal',
     short_name: 'HP Onboarding',
-    description: 'Complete your employee onboarding for HP Landscaping (Higher Purpose Landscaping LLC).',
+    description: 'Complete your employee onboarding for HP Landscaping (HP Landscaping LLC).',
     start_url: '/',
     display: 'standalone',
     background_color: '#f9fafb',
