@@ -20,7 +20,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 py-20 text-center relative z-10">
             <div className="mb-6">
               <span className="inline-block bg-white/10 backdrop-blur px-4 py-1.5 rounded-full text-sm font-medium text-green-200 border border-white/20">
-                HP Landscaping & Restore
+                HP Landscaping
               </span>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-4">
@@ -132,7 +132,7 @@ export default function Home() {
       </main>
 
       <footer className="bg-green-950 text-green-300/60 text-center py-6 text-sm border-t border-green-800/50">
-        &copy; {new Date().getFullYear()} HP Landscaping & Restore. All rights reserved.
+        &copy; {new Date().getFullYear()} Higher Purpose Landscaping LLC. All rights reserved.
       </footer>
     </>
   );

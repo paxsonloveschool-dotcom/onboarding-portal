@@ -18,7 +18,7 @@ export default function Navbar({ brand }: { brand?: BrandConfig }) {
           <div className="flex items-center space-x-3">
             <span className="text-2xl">{brand ? brand.logo : '🌿'}</span>
             <Link href={brand ? `/${brand.slug}/dashboard` : '/'} className="text-xl font-bold">
-              {brand ? brand.name : 'HP Landscaping & Restore'}
+              {brand ? brand.name : 'HP Landscaping'}
             </Link>
           </div>
 

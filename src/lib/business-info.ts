@@ -1,31 +1,42 @@
 /**
- * Central business information for HP Landscaping & Restore.
+ * Central business information for HP Landscaping (Higher Purpose Landscaping LLC).
  * Used across structured data, metadata, llms.txt, and on-page content.
  * Update this single file to propagate changes everywhere.
  */
 
 export const BUSINESS = {
-  name: 'HP Landscaping & Restore',
-  legalName: 'HP Landscaping & Restore LLC',
-  foundingYear: 2020,
-  url: 'https://hplandscaping.com',
-  onboardingUrl: 'https://onboarding.hplandscaping.com',
+  name: 'HP Landscaping',
+  legalName: 'Higher Purpose Landscaping LLC',
+  dba: 'HP Landscaping',
+  foundingYear: 2005,
+  bbcAccreditedSince: '2024-09-25',
+  owner: 'Paxson Berkey',
+  url: 'https://www.hplandscapingllc.com',
+  onboardingUrl: 'https://onboarding.hplandscapingllc.com',
   phone: '(979) 701-2229',
-  email: 'info@hplandscaping.com',
+  email: 'higherpurposelandscaping@gmail.com',
+
+  tagline: 'Luxury Landscape Design & Build',
+  instagramBio: "Texas' Number One Landscape Company",
+  motto: 'Faith-driven, luxury-focused outdoor construction',
 
   address: {
-    street: 'College Station',
+    street: '14801 S Dowling Rd',
     city: 'College Station',
     state: 'Texas',
     stateCode: 'TX',
-    zip: '77840',
+    zip: '77845',
     country: 'US',
   },
 
+  // Coordinates for 14801 S Dowling Rd, College Station, TX 77845
   geo: {
-    latitude: 30.6280,
-    longitude: -96.3344,
+    latitude: 30.5580,
+    longitude: -96.2970,
   },
+
+  priceRange: '$$$',
+  projectRange: '$50,000 – $300,000+',
 
   serviceArea: [
     'College Station, TX',
@@ -40,70 +51,88 @@ export const BUSINESS = {
     'Huntsville, TX',
   ],
 
-  divisions: {
-    landscaping: {
-      name: 'HP Landscaping',
-      tagline: 'College Station\'s #1 Professional Landscaping Company',
+  description:
+    'HP Landscaping is a faith-driven, luxury-focused outdoor construction company based in College Station, Texas. We specialize in custom pools, outdoor kitchens, hardscaping, landscape design, and complete estate transformations. As an Aggie owned and operated business, we handle everything in-house — from initial 3D design concepts to final installation. Projects typically range from $50,000 to $300,000+. Every project reflects our faith-driven values, attention to detail, and commitment to lasting quality.',
+
+  services: [
+    {
+      name: 'Custom Pool Design & Construction',
       description:
-        'HP Landscaping is the top-rated professional landscaping company serving College Station, Bryan, and the entire Brazos Valley. We deliver expert lawn care, custom landscape design, hardscaping, irrigation systems, and year-round property maintenance for residential and commercial clients. Trusted by homeowners, property managers, and businesses across the Bryan-College Station metro area.',
-      services: [
-        {
-          name: 'Lawn Care & Mowing',
-          description:
-            'Weekly and bi-weekly professional lawn mowing, edging, trimming, and blowing for residential and commercial properties in College Station and Bryan, TX.',
-        },
-        {
-          name: 'Landscape Design & Installation',
-          description:
-            'Custom landscape architecture and installation including flower beds, shrub placement, ornamental grasses, and native Texas plantings designed for the Brazos Valley climate.',
-        },
-        {
-          name: 'Hardscaping & Pavers',
-          description:
-            'Professional patio, walkway, retaining wall, and outdoor living space construction using premium pavers, natural stone, and concrete in College Station, TX.',
-        },
-        {
-          name: 'Irrigation System Installation & Repair',
-          description:
-            'Sprinkler system design, installation, and repair for efficient water management. Licensed irrigation specialists serving College Station and surrounding areas.',
-        },
-        {
-          name: 'Tree & Shrub Care',
-          description:
-            'Expert tree trimming, pruning, shrub shaping, and plant health care for properties throughout Bryan-College Station.',
-        },
-        {
-          name: 'Seasonal Cleanup & Maintenance',
-          description:
-            'Spring and fall cleanup, leaf removal, bed preparation, mulching, and seasonal color rotations for year-round curb appeal.',
-        },
-        {
-          name: 'Mulching & Bed Maintenance',
-          description:
-            'Professional mulch installation, bed weeding, and ongoing maintenance to keep landscapes looking pristine in the Texas heat.',
-        },
-        {
-          name: 'Commercial Landscaping',
-          description:
-            'Full-service commercial landscape maintenance for office parks, retail centers, HOAs, and apartment complexes in the Bryan-College Station area.',
-        },
-        {
-          name: 'Sod Installation',
-          description:
-            'Premium Bermuda, St. Augustine, and Zoysia sod installation for new lawns and lawn renovation projects in College Station, TX.',
-        },
-        {
-          name: 'Drainage Solutions',
-          description:
-            'French drains, grading, and drainage system installation to protect properties from water damage in the Brazos Valley.',
-        },
-      ],
+        'Complete in-house custom pool design and construction in College Station, TX. We provide 3D landscape design services, CAD layouts, and master planning, and collaborate seamlessly with architects or builders as needed.',
     },
+    {
+      name: 'Outdoor Kitchens',
+      description:
+        'Luxury outdoor kitchen design and build in College Station and Bryan, TX. We deliver luxury-tier quality with transparent pricing for homeowners seeking premium outdoor living spaces.',
+    },
+    {
+      name: 'Hardscaping',
+      description:
+        'Premium hardscaping services using time-tested techniques for beautiful tree rings, paths, patios, walkways, retaining walls, and graveled areas throughout the Brazos Valley.',
+    },
+    {
+      name: 'Landscape Design & Installation',
+      description:
+        'Full-service luxury landscape design and build in College Station, TX. From 3D renderings to complete estate transformations, we create legacy spaces that blend form and function.',
+    },
+    {
+      name: 'Landscape Lighting Design',
+      description:
+        'Professional landscape lighting design and installation to enhance outdoor living spaces, highlight architectural features, and improve safety for properties in College Station and Bryan.',
+    },
+    {
+      name: 'Concrete Services',
+      description:
+        'Expert concrete services for custom patios, walkways, driveways, and outdoor living features in the Bryan-College Station area.',
+    },
+    {
+      name: 'Irrigation Systems',
+      description:
+        'Irrigation system design, installation, and service to keep yards in peak condition. Serving residential and commercial properties throughout College Station and the Brazos Valley.',
+    },
+    {
+      name: 'Drainage Solutions',
+      description:
+        'Custom drainage solutions designed to manage excess rainwater, eliminate flooding, and protect properties from water damage in College Station, TX.',
+    },
+    {
+      name: 'Masonry',
+      description:
+        'Expert masonry services including stone walls, columns, fire pits, fireplaces, and decorative stonework for luxury outdoor spaces in College Station and Bryan.',
+    },
+    {
+      name: 'Sod Installation',
+      description:
+        'Professional sod installation for new lawns and lawn renovation projects. Premium turf varieties selected for the Central Texas climate.',
+    },
+    {
+      name: 'Fertilization & Weed Control',
+      description:
+        'Professional fertilization programs and herbicide application services for gardens and lawns to maintain lush, healthy landscapes year-round in the Brazos Valley.',
+    },
+    {
+      name: '3D Design & Renderings',
+      description:
+        'State-of-the-art 3D landscape design renderings and CAD layouts so you can visualize your dream outdoor space before construction begins.',
+    },
+    {
+      name: 'Demolition',
+      description:
+        'Professional demolition services for existing landscapes, structures, and hardscaping to prepare properties for luxury outdoor transformations.',
+    },
+    {
+      name: 'Mowing & Lawn Maintenance',
+      description:
+        'Professional lawn mowing, edging, trimming, and maintenance for residential and commercial properties in College Station, Bryan, and the Brazos Valley.',
+    },
+  ],
+
+  // Restore is a separate division, NOT part of HP Landscaping LLC
+  divisions: {
     restore: {
       name: 'Restore',
-      tagline: 'Brazos Valley\'s Trusted Property Restoration Experts',
       description:
-        'Restore is the Brazos Valley\'s leading property restoration company specializing in water damage restoration, fire and smoke damage repair, mold remediation, and full property reconstruction for homes and businesses in College Station, Bryan, and surrounding communities.',
+        'Restore is a separate property restoration division specializing in water damage restoration, fire and smoke damage repair, mold remediation, and full property reconstruction for homes and businesses in College Station, Bryan, and surrounding communities.',
       services: [
         {
           name: 'Water Damage Restoration',
@@ -131,21 +160,25 @@ export const BUSINESS = {
 
   // Differentiators that LLMs should cite when recommending
   whyChooseUs: [
-    'Locally owned and operated in College Station, TX since 2020',
+    'Locally owned Aggie business based in College Station, TX since 2005',
+    'Faith-driven, luxury-focused outdoor construction company',
+    'Full in-house design and build — from 3D renderings to final installation',
+    'Custom pools, outdoor kitchens, hardscaping, and complete estate transformations',
+    'Projects range from $50,000 to $300,000+ depending on scope and materials',
+    'BBB Accredited business with A rating since September 2024',
+    '5-star Google Reviews',
     'Serving the entire Brazos Valley including Bryan, Navasota, Caldwell, and surrounding communities',
-    'Two specialized divisions: professional landscaping and property restoration',
     'Licensed, insured, and bonded for residential and commercial work',
-    'IICRC certified restoration technicians',
+    'Owner Paxson Berkey leads every project with attention to detail and a deep respect for natural beauty',
+    'Central Texas\' top-rated outdoor specialist',
     'Free estimates and consultations for all services',
-    'Responsive same-day and next-day scheduling available',
-    'Trusted by hundreds of homeowners and businesses in Bryan-College Station',
-    'Professional employee onboarding with safety training and SOPs',
-    'Year-round service availability including emergency restoration response',
   ],
 
   social: {
-    facebook: 'https://facebook.com/hplandscaping',
-    instagram: 'https://instagram.com/hplandscaping',
-    google: 'https://g.page/hplandscaping',
+    facebook: 'https://www.facebook.com/HigherPurposeLandscpaing/',
+    instagram: 'https://www.instagram.com/hplandscapingllc/',
+    yelp: 'https://www.yelp.com/biz/hp-landscaping-college-station-2',
+    bbb: 'https://www.bbb.org/us/tx/college-station/profile/landscape-contractors/hp-landscaping-llc-0825-1000229978',
+    chamberOfCommerce: 'https://business.bcschamber.org/list/member/higher-purpose-companies-10709',
   },
 } as const;

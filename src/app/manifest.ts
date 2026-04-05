@@ -2,9 +2,9 @@ import type { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'HP Landscaping & Restore - Employee Onboarding Portal',
+    name: 'HP Landscaping - Employee Onboarding Portal',
     short_name: 'HP Onboarding',
-    description: 'Complete your employee onboarding for HP Landscaping and Restore divisions.',
+    description: 'Complete your employee onboarding for HP Landscaping (Higher Purpose Landscaping LLC).',
     start_url: '/',
     display: 'standalone',
     background_color: '#f9fafb',

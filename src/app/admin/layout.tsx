@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Admin Dashboard',
-  description: 'Admin dashboard for managing HP Landscaping & Restore employee onboarding.',
+  description: 'Admin dashboard for managing HP Landscaping employee onboarding.',
   robots: { index: false, follow: false },
 };
 
