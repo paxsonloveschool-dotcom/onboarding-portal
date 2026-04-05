@@ -1,19 +1,17 @@
-'use client';
+import type { Metadata } from 'next';
+import HPLayoutClient from './layout-client';
 
-import Navbar from '@/components/Navbar';
-import Sidebar from '@/components/Sidebar';
-import { brands } from '@/lib/brands';
-
-const brand = brands.hp;
+export const metadata: Metadata = {
+  title: 'HP Landscaping Onboarding',
+  description:
+    'Employee onboarding for HP Landscaping. Complete W-9 forms, review safety SOPs, upload certifications, and track your onboarding checklist.',
+  openGraph: {
+    title: 'HP Landscaping - Employee Onboarding',
+    description:
+      'Complete your HP Landscaping onboarding: W-9 forms, safety SOPs, certifications, and checklists.',
+  },
+};
 
 export default function HPLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <>
-      <Navbar brand={brand} />
-      <div className="flex flex-1">
-        <Sidebar brand={brand} />
-        <main className="flex-1 p-8">{children}</main>
-      </div>
-    </>
-  );
+  return <HPLayoutClient>{children}</HPLayoutClient>;
 }
