@@ -16,6 +16,7 @@ const navItems = [
   { label: 'Cognitive Guards', path: '/guards', icon: '🛡️' },
   { label: 'Sources', path: '/sources', icon: '📚' },
   { label: 'The Playbook', path: '/playbook', icon: '📖' },
+  { label: 'Video Library', path: '/library', icon: '🎬' },
 ];
 
 export default function GodModeLayout({ children }: { children: React.ReactNode }) {
