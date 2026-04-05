@@ -17,6 +17,11 @@ const navItems = [
   { label: 'Sources', path: '/sources', icon: '📚' },
   { label: 'The Playbook', path: '/playbook', icon: '📖' },
   { label: 'Video Library', path: '/library', icon: '🎬' },
+  { label: 'NEPQ Sales Bot', path: '/nepq', icon: '🤖' },
+  { label: 'Offer Builder', path: '/offer-builder', icon: '💰' },
+  { label: 'Funnel Builder', path: '/funnel', icon: '🔄' },
+  { label: '4-Day Cash Machine', path: '/cash-machine', icon: '💸' },
+  { label: 'FRO Follow-Up', path: '/fro', icon: '📞' },
 ];
 
 export default function GodModeLayout({ children }: { children: React.ReactNode }) {
